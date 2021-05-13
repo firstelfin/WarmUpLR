@@ -3,9 +3,9 @@ WarmUp(学习率预热)、CosineAnnealingWarmRestarts(带重启的余弦退火�
 
 ### 目录：
 
-* <a href="#1、学习率示意图">1、学习率示意图</a>
-* <a href="#2、CosineAnnealingWarmRestarts的使用">2、CosineAnnealingWarmRestarts的使用</a>
-* <a href="#3、WarmUp的使用">3、WarmUp的使用</a>
+* [1、学习率示意图](#1、学习率示意图)
+* [2、CosineAnnealingWarmRestarts的使用](#2、CosineAnnealingWarmRestarts的使用)
+* [3、WarmUp的使用](#3、WarmUp的使用)
 
 
 
