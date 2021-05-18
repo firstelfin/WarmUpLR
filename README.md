@@ -13,9 +13,9 @@ WarmUp(学习率预热)、CosineAnnealingWarmRestarts(带重启的余弦退火�
 
 CosineAnnealingWarmRestarts、WarmUp+CosineAnnealingWarmRestarts的示意图为：
 
- <img src="images/image-20210513111200002.png" width=350> <img src="images/image-20210513114001692.png" width=350>
+ <img src="images/image-20210518145612214.png" width=350> <img src="images/image-20210518145643314.png" width=350>
 
-
+右图中的红线右边部分，其中绿色曲线是从第9个epoch重启之后的学习率，可以发现与左图一致！
 
 ## 2、CosineAnnealingWarmRestarts的使用
 
