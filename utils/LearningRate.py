@@ -34,14 +34,14 @@ class CosineAnnealingWarmRestarts(object):
 
     def epoch_step_modify(self, epoch):
         """Iteration reset when loading pre training model."""
-        delta_epoch = self.get_used_epochs_in_cycle(epoch-1)
+        delta_epoch = self.get_used_epochs_in_cycle(epoch)
         if delta_epoch > 0 and self.step == 0:
             self.step = delta_epoch * self.steps
         pass
 
     def get_used_epochs_in_cycle(self, epoch):
         """Gets the number of epochs used in the current cycle."""
-        return epoch - self.get_start_epoch_in_cycle(epoch)
+        return epoch - self.get_start_epoch_in_cycle(epoch) - 1
 
     def get_start_epoch_in_cycle(self, epoch):
         """Gets the start_epoch for the current cycle."""
@@ -104,9 +104,9 @@ class WarmUpLR(object):
         self.warm_step = 0
 
     def get_learning_rate(self, epoch, step):
-        if epoch < self.warm_up_epoch:
+        if epoch < self.warm_up_epoch + 1:
             return self.get_warm_lr()
-        return self.origin_lr.get_learning_rate(epoch - 1, step)
+        return self.origin_lr.get_learning_rate(epoch - self.warm_up_epoch, step)
 
     def get_warm_lr(self):
         """Warm up the first two epochs by default"""
